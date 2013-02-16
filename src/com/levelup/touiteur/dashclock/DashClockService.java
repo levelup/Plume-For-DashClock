@@ -21,9 +21,9 @@ public class DashClockService extends DashClockExtension {
 		int unreadDMs = storage.getInt(StatusReceiver.INTENT_UNREAD_DM, 0);
 		
 		updatedData.visible(unreadTweets!=0 || unreadMentions!=0 || unreadDMs!=0);
-		updatedData.status(String.format("%d unread", (unreadTweets + unreadMentions + unreadDMs)));
+		updatedData.status(getString(R.string.status, (unreadTweets + unreadMentions + unreadDMs)));
 		
-		updatedData.expandedTitle(String.format("Tweets %d / Mentions %d / DMs %d", unreadTweets, unreadMentions, unreadDMs));
+		updatedData.expandedTitle(getString(R.string.expanded_title, unreadTweets, unreadMentions, unreadDMs));
 		String user = storage.getString(StatusReceiver.INTENT_UNREAD_USER, null);
 		String notifText = storage.getString(StatusReceiver.INTENT_UNREAD_TEXT, null);
 		StringBuilder expandedBody = new StringBuilder();
