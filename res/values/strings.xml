@@ -1,0 +1,7 @@
+<resources>
+
+    <string name="app_name">Plume For DashClock</string>
+    <string name="extension_title">Plume status</string>
+    <string name="extension_description">Display unread counters and last notification from Plume</string>
+    
+</resources>
