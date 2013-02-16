@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
-import android.util.Log;
 
 
 public class StatusReceiver extends BroadcastReceiver {
@@ -23,7 +22,7 @@ public class StatusReceiver extends BroadcastReceiver {
 	public void onReceive(Context context, Intent intent) {
 		if (intent!=null && GLOBAL_NOTIF.equals(intent.getAction())) {
 			// we received the broadcast status from Plume
-			//Log.wtf(LOG_TAG, "received Plume notification "+intent.getExtras());
+			//Log.d(LOG_TAG, "received Plume notification "+intent.getExtras());
 			
 			SharedPreferences storage = getStorage(context);
 			Editor e = storage.edit();
