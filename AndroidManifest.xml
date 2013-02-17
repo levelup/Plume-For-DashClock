@@ -22,7 +22,6 @@
 
         <service
             android:name=".DashClockService"
-            android:icon="@drawable/widget_picholder"
             android:label="@string/extension_title"
             android:permission="com.google.android.apps.dashclock.permission.READ_EXTENSION_DATA" >
             <intent-filter>

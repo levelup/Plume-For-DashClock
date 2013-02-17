@@ -30,7 +30,7 @@ public class DashClockService extends DashClockExtension {
 			updatedData = null; // reset so it not displayed
 		else {
 			updatedData = new ExtensionData();
-			updatedData.icon(R.drawable.widget_picholder);
+			updatedData.icon(R.drawable.ic_launcher);
 			updatedData.clickIntent(new Intent().setClassName("com.levelup.touiteur", "com.levelup.touiteur.TouiteurMain"));
 
 			updatedData.visible(unreadTweets!=0 || unreadMentions!=0 || unreadDMs!=0);
