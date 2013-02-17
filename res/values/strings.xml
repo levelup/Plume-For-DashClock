@@ -10,9 +10,12 @@
     <string name="pref_hide_empty">Hide When Empty</string>
     <string name="pref_hide_empty_summary">Hide the DashClock widget when all counters are empty</string>
     <string name="pref_counters">Counters</string>
-    <string name="pref_counter_tweets">Show unread counter for Tweets</string>
-    <string name="pref_counter_mentions">Show unread counter for Mentions</string>
-    <string name="pref_counter_dms">Show unread counter for DMs</string>
+    <string name="pref_counter_tweets">Show Tweets</string>
+    <string name="pref_counter_tweets_summary">Show unread counter for Tweets</string>
+    <string name="pref_counter_mentions">Show Mentions</string>
+    <string name="pref_counter_mentions_summary">Show unread counter for Mentions</string>
+    <string name="pref_counter_dms">Show DMs</string>
+    <string name="pref_counter_dms_summary">Show unread counter for DMs</string>
     <string name="warn_plume_missing">\"Plume for Twitter\" is not installed
 \nWould you like to download it now ?</string>
     

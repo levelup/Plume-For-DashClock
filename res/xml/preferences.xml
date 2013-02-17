@@ -11,14 +11,17 @@
         <SwitchPreference
             android:defaultValue="true"
             android:key="ShowCounterTweet"
+            android:summary="@string/pref_counter_tweets_summary"
             android:title="@string/pref_counter_tweets" />
         <SwitchPreference
             android:defaultValue="true"
             android:key="ShowCounterMentions"
+            android:summary="@string/pref_counter_mentions_summary"
             android:title="@string/pref_counter_mentions" />
         <SwitchPreference
             android:defaultValue="true"
             android:key="ShowCounterDMs"
+            android:summary="@string/pref_counter_dms_summary"
             android:title="@string/pref_counter_dms" />
     </PreferenceCategory>
 
