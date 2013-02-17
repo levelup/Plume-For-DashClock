@@ -9,6 +9,7 @@
 
     <application
         android:allowBackup="true"
+        android:backupAgent=".BackupAgent"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
@@ -43,6 +44,10 @@
             android:name=".DashClockSettings"
             android:exported="true"
             android:label="@string/title_settings" />
+
+        <meta-data
+            android:name="com.google.android.backup.api_key"
+            android:value="AEdPqrEAAAAIRqgiTt3uZOa8EfeHgMN552trrMIo5x58B4n2PA" />
     </application>
 
 </manifest>
