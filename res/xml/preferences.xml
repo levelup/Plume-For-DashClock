@@ -7,4 +7,19 @@
         android:summary="@string/pref_hide_empty_summary"
         android:title="@string/pref_hide_empty" />
 
+    <PreferenceCategory android:title="@string/pref_counters" >
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="ShowCounterTweet"
+            android:title="@string/pref_counter_tweets" />
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="ShowCounterMentions"
+            android:title="@string/pref_counter_mentions" />
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="ShowCounterDMs"
+            android:title="@string/pref_counter_dms" />
+    </PreferenceCategory>
+
 </PreferenceScreen>
