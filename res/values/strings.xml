@@ -1,9 +1,12 @@
 <resources>
 
     <string name="app_name">Plume For DashClock</string>
+    <string name="title_settings">Plume DashClock Settings</string>
     <string name="extension_title">Plume status</string>
     <string name="extension_description">Display unread counters and last notification from Plume</string>
     <string name="status">%1$d/%2$d/%3$d</string>
     <string name="expanded_title">Tweets %1$d / Mentions %2$d / DMs %3$d</string>
-    
+    <string name="pref_hide_empty">Hide When Empty</string>
+    <string name="pref_hide_empty_summary">Hide the DashClock widget when all counters are empty</string>
+
 </resources>
