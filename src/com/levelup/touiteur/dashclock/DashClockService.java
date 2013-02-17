@@ -14,20 +14,20 @@ public class DashClockService extends DashClockExtension {
 		super.onInitialize(isReconnect);
 		setUpdateWhenScreenOn(true);
 	}
-	
+
 	@Override
 	protected void onUpdateData(int reason) {
 		SharedPreferences storage = StatusReceiver.getStorage(getApplicationContext());
-		ExtensionData updatedData = new ExtensionData();
-		updatedData.icon(R.drawable.widget_picholder);
-		updatedData.clickIntent(new Intent().setClassName("com.levelup.touiteur", "com.levelup.touiteur.TouiteurMain"));
-		
 		int unreadTweets = storage.getInt(StatusReceiver.INTENT_UNREAD_TWEET, 0);
 		int unreadMentions = storage.getInt(StatusReceiver.INTENT_UNREAD_MENTION, 0);
 		int unreadDMs = storage.getInt(StatusReceiver.INTENT_UNREAD_DM, 0);
 		
+		ExtensionData updatedData = new ExtensionData();
+		updatedData.icon(R.drawable.widget_picholder);
+		updatedData.clickIntent(new Intent().setClassName("com.levelup.touiteur", "com.levelup.touiteur.TouiteurMain"));
+		
 		updatedData.visible(unreadTweets!=0 || unreadMentions!=0 || unreadDMs!=0);
-		updatedData.status(getString(R.string.status, (unreadTweets + unreadMentions + unreadDMs)));
+		updatedData.status(getString(R.string.status, unreadTweets, unreadMentions, unreadDMs));
 		
 		updatedData.expandedTitle(getString(R.string.expanded_title, unreadTweets, unreadMentions, unreadDMs));
 		String user = storage.getString(StatusReceiver.INTENT_UNREAD_USER, null);
