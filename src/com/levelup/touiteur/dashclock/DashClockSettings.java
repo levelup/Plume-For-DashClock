@@ -16,7 +16,6 @@ public class DashClockSettings extends PreferenceActivity {
 	@Override
 	protected void onPostCreate(Bundle savedInstanceState) {
 		super.onPostCreate(savedInstanceState);
-		getPreferenceManager().setSharedPreferencesName(DashClockService.USER_PREFS);
 		addPreferencesFromResource(R.xml.preferences);
 	}
 

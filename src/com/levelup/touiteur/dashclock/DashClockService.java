@@ -9,8 +9,6 @@ import com.google.android.apps.dashclock.api.ExtensionData;
 
 public class DashClockService extends DashClockExtension {
 	
-	static final String USER_PREFS = "preferences";
-	
 	private static final String PREF_HIDE_EMPTY = "HideWhenEmpty";
 	private static final String PREF_SHOW_TWEET = "ShowCounterTweet";
 	private static final String PREF_SHOW_MENTION = "ShowCounterMentions";
@@ -24,7 +22,7 @@ public class DashClockService extends DashClockExtension {
 
 	@Override
 	protected void onUpdateData(int reason) {
-		SharedPreferences userPrefs = getApplicationContext().getSharedPreferences(USER_PREFS, 0);
+		SharedPreferences userPrefs = getApplicationContext().getSharedPreferences(getPackageName() + "_preferences", 0);
 		
 		SharedPreferences storage = StatusReceiver.getStorage(getApplicationContext());
 		Integer unreadTweets = !userPrefs.getBoolean(PREF_SHOW_TWEET, true) ? null : storage.getInt(StatusReceiver.INTENT_UNREAD_TWEET, 0);
