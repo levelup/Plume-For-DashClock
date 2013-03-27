@@ -2,10 +2,15 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
 
     <SwitchPreference
-        android:defaultValue="true"
-        android:key="HideWhenEmpty"
-        android:summary="@string/pref_hide_empty_summary"
-        android:title="@string/pref_hide_empty" />
+            android:defaultValue="true"
+            android:key="HideWhenEmpty"
+            android:summary="@string/pref_hide_empty_summary"
+            android:title="@string/pref_hide_empty" />
+    <SwitchPreference
+            android:defaultValue="true"
+            android:key="HideEmptyCounters"
+            android:summary="@string/pref_hide_empty_counters_summary"
+            android:title="@string/pref_hide_empty_counters" />
 
     <PreferenceCategory android:title="@string/pref_counters" >
         <SwitchPreference

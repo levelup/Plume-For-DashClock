@@ -9,6 +9,8 @@
     <string name="expanded_title_dm">DMs %1$d</string>
     <string name="pref_hide_empty">Hide When Empty</string>
     <string name="pref_hide_empty_summary">Hide the DashClock widget when all counters are empty</string>
+    <string name="pref_hide_empty_counters">Hide Empty Counters</string>
+    <string name="pref_hide_empty_counters_summary">Hide a counter if it is empty</string>
     <string name="pref_counters">Counters</string>
     <string name="pref_counter_tweets">Show Tweets</string>
     <string name="pref_counter_tweets_summary">Show unread counter for Tweets</string>
