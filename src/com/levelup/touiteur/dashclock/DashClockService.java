@@ -24,8 +24,9 @@ import com.google.android.apps.dashclock.api.ExtensionData;
 
 
 public class DashClockService extends DashClockExtension {
-	
+
 	private static final String PREF_HIDE_EMPTY = "HideWhenEmpty";
+	private static final String PREF_HIDE_EMPTY_COUNTERS = "HideEmptyCounters";
 	private static final String PREF_SHOW_TWEET = "ShowCounterTweet";
 	private static final String PREF_SHOW_MENTION = "ShowCounterMentions";
 	private static final String PREF_SHOW_DM = "ShowCounterDMs";
@@ -47,6 +48,8 @@ public class DashClockService extends DashClockExtension {
 
 		//Log.d(StatusReceiver.LOG_TAG, "update "+unreadTweets+" / "+unreadMentions+" / "+unreadDMs+" hide:"+userPrefs.getBoolean(PREF_HIDE_EMPTY, true));
 		ExtensionData updatedData;
+		boolean hideEmptyCounters = userPrefs.getBoolean(PREF_HIDE_EMPTY_COUNTERS, true);
+
 		if (userPrefs.getBoolean(PREF_HIDE_EMPTY, true)
 				&& (unreadTweets==null   || unreadTweets==0)
 				&& (unreadMentions==null || unreadMentions==0)
@@ -60,29 +63,41 @@ public class DashClockService extends DashClockExtension {
 			
 			StringBuilder status = new StringBuilder();
 			if (unreadTweets!=null) {
-				status.append(String.valueOf(unreadTweets));
+				if (!hideEmptyCounters || unreadTweets > 0) {
+					status.append(String.valueOf(unreadTweets));
+				}
 			}
 			if (unreadMentions!=null) {
-				if (status.length()!=0) status.append('/');
-				status.append(String.valueOf(unreadMentions));
+				if (!hideEmptyCounters || unreadMentions > 0) {
+					if (status.length()!=0) status.append('/');
+					status.append(String.valueOf(unreadMentions));
+				}
 			}
 			if (unreadDMs!=null) {
-				if (status.length()!=0) status.append('/');
-				status.append(String.valueOf(unreadDMs));
+				if (!hideEmptyCounters || unreadDMs > 0) {
+					if (status.length()!=0) status.append('/');
+					status.append(String.valueOf(unreadDMs));
+				}
 			}
 			updatedData.status(status.toString());
 
 			StringBuilder expanded = new StringBuilder();
 			if (unreadTweets!=null) {
-				expanded.append(getString(R.string.expanded_title_tweet, unreadTweets));
+				if (!hideEmptyCounters || unreadTweets > 0) {
+					expanded.append(getString(R.string.expanded_title_tweet, unreadTweets));
+				}
 			}
 			if (unreadMentions!=null) {
-				if (expanded.length()!=0) expanded.append(" / ");
-				expanded.append(getString(R.string.expanded_title_mention, unreadMentions));
+				if (!hideEmptyCounters || unreadMentions > 0) {
+					if (expanded.length()!=0) expanded.append(" / ");
+					expanded.append(getString(R.string.expanded_title_mention, unreadMentions));
+				}
 			}
 			if (unreadDMs!=null) {
-				if (expanded.length()!=0) expanded.append(" / ");
-				expanded.append(getString(R.string.expanded_title_dm, unreadDMs));
+				if (!hideEmptyCounters || unreadDMs > 0) {
+					if (expanded.length()!=0) expanded.append(" / ");
+					expanded.append(getString(R.string.expanded_title_dm, unreadDMs));
+				}
 			}
 			updatedData.expandedTitle(expanded.toString());
 			
