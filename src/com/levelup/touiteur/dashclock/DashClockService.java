@@ -73,14 +73,14 @@ public class DashClockService extends DashClockExtension {
 			updatedData.status(status.toString());
 
 			StringBuilder expanded = new StringBuilder();
-			if (unreadTweets!=null) {
+			if (null!=unreadTweets && 0 != unreadTweets) {
 				expanded.append(getString(R.string.expanded_title_tweet, unreadTweets));
 			}
-			if (unreadMentions!=null) {
+			if (null!=unreadMentions && 0 != unreadMentions) {
 				if (expanded.length()!=0) expanded.append(" / ");
 				expanded.append(getString(R.string.expanded_title_mention, unreadMentions));
 			}
-			if (unreadDMs!=null) {
+			if (null!=unreadDMs && 0 != unreadDMs) {
 				if (expanded.length()!=0) expanded.append(" / ");
 				expanded.append(getString(R.string.expanded_title_dm, unreadDMs));
 			}
